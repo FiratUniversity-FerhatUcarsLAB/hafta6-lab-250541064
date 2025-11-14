@@ -18,15 +18,17 @@ public class Main {
         System.out.print("Ödev notunu gir: ");
         double odev = scanner.nextDouble();
 
-        // Ortalama hesaplama
+        // Ortalama hesapla
         double ortalama = NotHesaplama.calculateAverage(vize, finall, odev);
 
-        // Sonuçları yazdırma
+        // Sonuçları yazdır
+        System.out.println("======= ÖĞRENCİ NOT DURUMU =======");
         System.out.println("Ortalama: " + ortalama);
         System.out.println("Geçme Durumu: " + (NotHesaplama.isPassingGrade(ortalama) ? "GEÇTİ" : "KALDI"));
         System.out.println("Harf Notu: " + NotHesaplama.getLetterGrade(ortalama));
         System.out.println("Onur Listesi: " + (NotHesaplama.isHonorList(ortalama, vize, finall, odev) ? "EVET" : "HAYIR"));
         System.out.println("Bütünleme Hakkı: " + (NotHesaplama.hasRetakeRight(ortalama) ? "VAR" : "YOK"));
+        System.out.println("==================================");
 
         scanner.close();
     }
