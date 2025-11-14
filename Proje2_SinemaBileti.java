@@ -1,6 +1,6 @@
 // AD SOYAD: MUHAMMET EREN ALPTEKİN
 // ÖĞRENCİ NO: 250541064
-// AÇIKLAMA: Bu sistem indirimli bilet avantajına sahip olan insanların indirimini hesaplayıp, gün, saat, film ve ücret hakkında bilgilendirme yapar.
+// AÇIKLAMA: Bu sistem bilet bilgilendirmesi yapıp, indirimli bilet avantajına sahip olan insanların indirimini hesaplar, gün, saat, film ve ücret hakkında bilgilendirme yapar.
 
 public class CinemaTicketSystem {
 
@@ -106,3 +106,4 @@ public class CinemaTicketSystem {
         // Örnek: Cuma günü, saat 14:00, 20 yaşında öğrenci, 3D film
     }
 }
+
