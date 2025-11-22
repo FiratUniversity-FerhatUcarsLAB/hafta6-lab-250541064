@@ -1,12 +1,8 @@
-// AD SOYAD: MUHAMMET EREN ALPTEKİN
-// ÖĞRENCİ NO: 250541064
-// AÇIKLAMA: Bu program bir restoran sipariş sistemi olarak kullanılmasının yanı sıra indirimleri hesaplar ve bahşiş önerisinde bulunur.
-
 import java.util.Scanner;
 
 public class RestoranSiparis {
 
-    // --- Fiyat Metotları (Aynı Kalacak) ---
+    // --- Fiyat Metotları ---
     public static int getMainDishPrice(int secim) {
         switch (secim) {
             case 1: return 85;
@@ -49,7 +45,7 @@ public class RestoranSiparis {
         return anaVar && icecekVar && tatliVar;
     }
 
-    public static boolean isHappyHour(int saat) {
+    public static boolean isMutluSaatler(int saat) {
         return (saat >= 14 && saat <= 16);
     }
 
@@ -59,17 +55,17 @@ public class RestoranSiparis {
             indirim += 0.10;
             if (ogrenci) {
                 indirim += 0.05;
-                if (isHappyHour(saat)) {
+                if (isMutluSaatler(saat)) {
                     indirim += 0.2;
                 }
             }
         } else {
             if (ogrenci) {
                 indirim += 0.05;
-                if (isHappyHour(saat)) {
+                if (isMutluSaatler(saat)) {
                     indirim += 0.05;
                 }
-            } else if (isHappyHour(saat)) {
+            } else if (isMutluSaatler(saat)) {
                 indirim += 0.05;
             }
         }
@@ -98,10 +94,9 @@ public class RestoranSiparis {
         return secim;
     }
 
-    // --- YENİ: Evet/Hayır Kontrol Metodu ---
+    // --- Evet/Hayır Kontrol Metodu ---
     public static boolean evetHayirAl(Scanner input) {
         while (true) {
-            // Girilen yazıyı al, boşlukları sil ve küçük harfe çevir
             String cevap = input.nextLine().trim().toLowerCase();
 
             if (cevap.equals("evet")) {
@@ -146,7 +141,7 @@ public class RestoranSiparis {
 
         input.nextLine(); // Buffer temizleme (önceki sayı girişinden kalan "enter"ı siler)
 
-        // 5. Öğrenci Bilgisi (KONTROLLÜ)
+        // 5. Öğrenci Bilgisi
         System.out.print("\nÖğrenci misiniz? (evet/hayır): ");
         // Burası artık yeni metoda gidiyor
         boolean ogrenci = evetHayirAl(input);
@@ -158,8 +153,7 @@ public class RestoranSiparis {
         // --- Hesaplama ---
         double toplam = anaYemek + baslangic + icecek + tatli;
         boolean combo = isComboOrder(anaVar, icecekVar, tatliVar);
-
-        // Not: Kodundaki "sa1at" yazım hatasını düzelttim:
+        
         double indirimliTutar = calculateDiscount(toplam, combo, ogrenci, saat);
 
         double bahsis = calculateServiceTip(indirimliTutar);
