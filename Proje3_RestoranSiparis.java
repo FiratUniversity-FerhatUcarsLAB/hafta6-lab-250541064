@@ -1,3 +1,7 @@
+// AD SOYAD: MUHAMMET EREN ALPTEKİN
+// ÖĞRENCİ NO: 250541064
+// AÇIKLAMA: Bu program restoran sipariş sistemi olmasının yanı sıra indirim hesabı ve bahşiş önerisini sunar, böylece müşteri memnuniyetinde sıkıntı çıkaran garsonların işiini görür ve işletmedeki hesap açıklarını sıfıra yakın denecek kadar düşürür.
+
 import java.util.Scanner;
 
 public class RestoranSiparis {
@@ -164,3 +168,4 @@ public class RestoranSiparis {
         System.out.println("Bahşiş Önerisi: " + bahsis + " TL");
     }
 }
+
